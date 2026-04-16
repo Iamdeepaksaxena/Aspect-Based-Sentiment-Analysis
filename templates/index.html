@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ABSA Analyzer</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 600px;
+            margin: auto;
+        }
+
+        textarea, input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .aspect-box {
+            background: #eef;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Aspect-Based Sentiment Analysis</h2>
+
+    <form method="POST">
+        <label>Enter Text:</label>
+        <textarea name="sentence" rows="5" required></textarea>
+
+        <label>Enter Aspects (comma separated):</label>
+        <input type="text" name="aspects" placeholder="battery, screen, laptop" required>
+
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if sentence %}
+    <div class="result">
+        <h3>Sentence:</h3>
+        <p>{{ sentence }}</p>
+
+        <h3>Aspect Sentiments:</h3>
+        {% for res in aspect_results %}
+            <div class="aspect-box">
+                <b>{{ res.aspect }}</b><br>
+                Negative: {{ res.negative }}<br>
+                Neutral: {{ res.neutral }}<br>
+                Positive: {{ res.positive }}
+            </div>
+        {% endfor %}
+
+        <h3>Overall Sentiment:</h3>
+        <p>{{ overall.label }} ({{ overall.score }})</p>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
