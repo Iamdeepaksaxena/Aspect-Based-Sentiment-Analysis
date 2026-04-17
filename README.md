@@ -31,8 +31,8 @@ project/
 ## ⚙️ Installation
 
 ```
-1️⃣ Clone the Repository
-git clone https://github.com/iamdeepaksaxena/Aspect-Based-Sentiment-Analysis.git
+1️⃣ Clone the Repository 
+git clone https://github.com/Iamdeepaksaxena/Aspect-Based-Sentiment-Analysis.git
 2️⃣ Create a Virtual Environment
 python -m venv venv
 .\venv\Scripts\activate   # For Windows
@@ -44,10 +44,10 @@ python src/app.py
 
 ```
 
-```
+
 ## References
 🧠 ABSA Model
 🔗 https://huggingface.co/yangheng/deberta-v3-base-absa-v1.1
 💬 Sentiment Analysis Model
 🔗 https://huggingface.co/cardiffnlp/twitter-xlm-roberta-base-sentiment
-```
+
