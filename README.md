@@ -43,3 +43,11 @@ pip install -r requirements.txt
 python src/app.py
 
 ```
+
+```
+## References
+🧠 ABSA Model
+🔗 https://huggingface.co/yangheng/deberta-v3-base-absa-v1.1
+💬 Sentiment Analysis Model
+🔗 https://huggingface.co/cardiffnlp/twitter-xlm-roberta-base-sentiment
+```
